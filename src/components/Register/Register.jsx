@@ -1,7 +1,28 @@
-import React from 'react';
+// import React from 'react';
 import { Form, Input, Button } from 'antd';
+import { useContext } from "react";
+import { UserContext } from "../../context/UserState";
+import { useNavigate } from "react-router-dom";
+
 
 const Register = () => {
+
+    const { register, message } = useContext(UserContext);
+
+    const navigate = useNavigate()
+
+    const onFinish = (values) => {  
+      register(values)
+      setTimeout(() => {
+          navigate("/")
+        //   clearMessage()
+      },3000)
+    };
+   
+    const onFinishFailed = (errorInfo) => {
+      console.log("Failed:", errorInfo);
+    };
+
     return (
         <div className="container">
             <Form
