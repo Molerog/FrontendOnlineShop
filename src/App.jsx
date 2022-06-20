@@ -9,22 +9,25 @@ import Products from "./components/Products/Products";
 import Login from "./components/Login/Login";
 import "antd/dist/antd.css";
 import Profile from "./components/Profile/Profile";
+import { ProductProvider } from "./context/ProductState";
 
 function App() {
   return (
     <div className="GlobalContainer">
       <UserProvider>
-        <Router>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Register />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/profile" element={<Profile />} />
-          </Routes>
-          <Footer />
-        </Router>
+        <ProductProvider>
+          <Router>
+            <Header />
+            <Routes>
+              <Route path="/" element={<Register />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/profile" element={<Profile />} />
+            </Routes>
+            <Footer />
+          </Router>
+        </ProductProvider>
       </UserProvider>
     </div>
   );

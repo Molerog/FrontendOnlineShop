@@ -13,8 +13,6 @@ const initialState = {
     message: ""
 };
 
-
-
 export const UserContext = createContext(initialState);
 
 export const UserProvider = ({children}) => {

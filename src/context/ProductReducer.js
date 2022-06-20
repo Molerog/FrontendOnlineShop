@@ -1,13 +1,13 @@
-const users = (state, action) => {
+const products = (state, action) => {
     switch (action.type){
-        case "REGISTER":
+        case "GET_PRODUCTS":
             return{
                 ...state,
-                message: action.payload.message
+                products: action.payload
             }
             default:
                 return state;
     }
 }
 
-export default users
+export default products
