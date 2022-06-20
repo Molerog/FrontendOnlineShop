@@ -3,6 +3,7 @@ import { Form, Input, Button } from 'antd';
 import { useContext } from "react";
 import { UserContext } from "../../context/UserState";
 import { useNavigate } from "react-router-dom";
+import './Register.css'
 
 
 const Register = () => {
@@ -24,6 +25,7 @@ const Register = () => {
     };
 
     return (
+        
         <div className="container">
             <Form
                 name="basic"
