@@ -1,0 +1,25 @@
+// .CentralContainer{
+//     display:flex;
+//     flex-direction: column;
+//     justify-content: flex-end;
+//     align-items: center;
+//     // background-image: url('/Assets/fondovinilo.webp');
+//     background-position: center;
+//     flex:1;
+// }
+
+.container{
+    display:flex;   
+    justify-content: center;
+    a{
+        display:flex;
+        justify-content: center
+    }
+   
+}
+
+.textContainer{
+    display:flex;
+    justify-content: space-evenly;
+}
+

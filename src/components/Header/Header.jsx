@@ -1,9 +1,27 @@
-import React from 'react'
+import React from "react";
+import './Header.scss'
+import { Link } from "react-router-dom";
+
+
 
 const Header = () => {
   return (
-    <div>SOY UN HEADER</div>
-  )
-}
+    <header>
+      <div className="overlay">
+        <h1>Simply The Best</h1>
+        <h3>Reasons for Choosing US</h3>
+        <div className='LinksContainer'>
+         <Link to="/home">Home</Link>
+         <Link to='/products'>Products</Link>
+         <Link to='/profile'>Profile</Link>
+         <div className='ButtonsContainer'>
+         <button><Link to='/'>Register</Link></button>
+         <button><Link to='/login'>Login</Link></button>
+         </div>
+        </div>
+      </div>
+    </header>
+  );
+};
 
-export default Header
+export default Header;

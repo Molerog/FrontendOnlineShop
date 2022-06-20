@@ -6,11 +6,14 @@ const API_URL = "http://localhost:8000";
 
 const token = JSON.parse(localStorage.getItem("token"));
 
+
 const initialState = {
     token: token ? token : null,
     user: null,
     message: ""
 };
+
+
 
 export const UserContext = createContext(initialState);
 
