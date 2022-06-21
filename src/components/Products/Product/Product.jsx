@@ -1,19 +1,16 @@
 import React from "react";
-import {
-    EditOutlined,
-    EllipsisOutlined,
-    SettingOutlined,
-} from "@ant-design/icons";
 import { useContext, useEffect } from "react";
+import { render } from "react-dom";
 import { ProductContext } from "../../../context/ProductState";
-import { Avatar, Card } from "antd";
+import { EditOutlined, EllipsisOutlined, SettingOutlined } from "@ant-design/icons";
+import { Avatar, Card, Button } from "antd";
 
 const { Meta } = Card;
 
 const Product = () => {
-    const { products, getProducts } = useContext(ProductContext);
+    const { products, getProducts, addCart } = useContext(ProductContext);
     useEffect(() => {
-        getProducts();
+        getProducts()
     }, []);
 
     const productlist = products.map((element) => {
@@ -21,12 +18,12 @@ const Product = () => {
             <div key= {element.id}>
                 <Card
                     style={{
-                        width: 300
+                        width: 300,
                     }}
                     cover={
                         <img
-                          alt="example"
-                          src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                            alt="example"
+                            src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
                         />
                     }
                     actions={[
@@ -39,6 +36,7 @@ const Product = () => {
                         avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
                         title={element.product}
                         description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis ullam enim obcaecati pariatur numquam assumenda magni ab eius dicta alias animi rem deserunt reprehenderit dolorem, quasi iure corrupti cupiditate tenetur."
+                        // extra={<Button onClick={onClick}>Añadir al carrito</Button>} 
                     />
                 </Card>
             </div>

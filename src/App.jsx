@@ -12,6 +12,7 @@ import Profile from "./components/Profile/Profile";
 import Home from "./components/Home/Home";
 import Products from "./components/Products/Products";
 import Footer from "./components/Footer/Footer";
+import Cart from "./components/Cart/Cart";
 
 function App() {
     return (
@@ -26,6 +27,7 @@ function App() {
                             <Route path="/products" element={<Products />} />
                             <Route path="/login" element={<Login />} />
                             <Route path="/profile" element={<Profile />} />
+                            <Route path="/cart" element={<Cart />} />
                         </Routes>
                         <Footer />
                     </Router>
