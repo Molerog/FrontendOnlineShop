@@ -21,7 +21,7 @@ const Register = () => {
 
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
-  };
+  }
 
   return (
     <div className="container">

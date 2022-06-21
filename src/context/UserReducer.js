@@ -4,9 +4,16 @@ const users = (state, action) => {
             return{
                 ...state,
                 message: action.payload.message
-            }
-            default:
-                return state;
+            };
+
+        case "LOGIN":
+            return{
+                ...state,
+                token: action.payload.token
+            };
+
+        default:
+            return state;
     }
 }
 
