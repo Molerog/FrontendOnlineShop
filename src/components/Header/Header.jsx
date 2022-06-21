@@ -9,6 +9,8 @@ const Header = () => {
   const logoutUser = () => {
     logout();
   };
+
+  
   return (
     <header>
       <div className="overlay">

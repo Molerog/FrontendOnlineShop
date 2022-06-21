@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Input, Button } from 'antd';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { UserContext } from '../../context/UserState';
 import { useNavigate } from 'react-router-dom';
 
@@ -11,11 +11,17 @@ const Login = () => {
 
     const onFinish = (values) => {
       login(values);
-      setTimeout(() => {
-        navigate("/home");
-        //   clearMessage()
-      }, 1000);
     };
+
+    useEffect(() => {
+        setTimeout(() => {
+          const foundToken = JSON.parse(localStorage.getItem("token"));
+          if (foundToken) {
+          navigate("/profile")
+        }
+        },2000)  
+   
+    }, [login])
   
     const onFinishFailed = (errorInfo) => {
       console.log("Failed:", errorInfo);
