@@ -36,10 +36,24 @@ export const UserProvider = ({children}) => {
         if (res.data) {
             localStorage.setItem("token", JSON.stringify(res.data.token))
         }
-    }
+    };
+
+    const getUserInfo = async () =>{
+        const res = await axios.get(API_URL + "/users/info", {
+            headers: {
+                authorization: token,
+            }
+        }
+        );   
+        dispatch({
+            type:'GET_USER_INFO',
+            payload: res.data
+        })
+        return res;
+    };
 
     return(
-        <UserContext.Provider value = {{ register, login, message: state.message, token:state.token }}>
+        <UserContext.Provider value = {{ register, login, message: state.message, token:state.token, getUserInfo, user:state.user}}>
             {children}
         </UserContext.Provider>
     )

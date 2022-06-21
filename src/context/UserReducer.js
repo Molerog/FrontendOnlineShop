@@ -3,14 +3,20 @@ const users = (state, action) => {
         case "REGISTER":
             return{
                 ...state,
-                message: action.payload.message
+                message: action.payload.message,
             };
 
         case "LOGIN":
             return{
                 ...state,
-                token: action.payload.token
+                token: action.payload.token,
             };
+
+        case 'GET_USER_INFO':
+        return{
+            ...state,
+            user: action.payload,
+        }
 
         default:
             return state;
