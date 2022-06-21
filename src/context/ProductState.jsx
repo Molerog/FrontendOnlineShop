@@ -4,11 +4,12 @@ import ProductReducer from "./ProductReducer";
 
 const API_URL = "http://localhost:8000";
 
-const initialState = {
-  products: [],
-  cart: []
-};
+const cart = JSON.parse(localStorage.getItem("cart"));
 
+const initialState = {
+    products: [],
+    cart: cart ? cart : []
+};
 
 export const ProductContext = createContext(initialState);
 
@@ -25,9 +26,15 @@ export const ProductProvider = ({ children }) => {
 
     const addCart = (product) => {
         dispatch({
-        type: "ADD_CART",
-        payload: product
+            type: "ADD_CART",
+            payload: product
         })
+    };
+
+    const clearCart = () => {
+        dispatch({
+            type: "CLEAR_CART",
+        });
     };
 
     return (
@@ -36,7 +43,8 @@ export const ProductProvider = ({ children }) => {
                 products: state.products,
                 cart: state.cart,
                 getProducts,
-                addCart
+                addCart,
+                clearCart
             }}
         >
             {children}

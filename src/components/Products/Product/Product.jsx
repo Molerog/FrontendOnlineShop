@@ -8,10 +8,15 @@ import { Avatar, Card, Button } from "antd";
 const { Meta } = Card;
 
 const Product = () => {
-    const { products, getProducts, addCart } = useContext(ProductContext);
+    const { products, getProducts, addCart, cart } = useContext(ProductContext);
+
     useEffect(() => {
         getProducts()
     }, []);
+    
+    useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(cart));
+    }, [cart]);
 
     const productlist = products.map((element) => {
         return (

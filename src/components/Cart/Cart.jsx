@@ -1,8 +1,12 @@
 import { useContext } from "react";
-import { ProductsContext } from "../../context/ProductsContext/ProductsState";
+import { ProductContext } from "../../context/ProductState";
 
 const Cart = () => {
-    const { cart } = useContext(ProductsContext);
+    const { cart } = useContext(ProductContext);
+
+    useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(cart))
+    }, [cart]);
 
     if (cart.length <= 0) {
         return <span>No tienes ningún producto en tu carrito</span>
@@ -19,7 +23,8 @@ const Cart = () => {
 
     return (
         <div>
-        {cartItem}
+            {cartItem}
+            <button onClick={() => clearCart()}>Vacía tu carrito</button>
         </div>
     )
 }
