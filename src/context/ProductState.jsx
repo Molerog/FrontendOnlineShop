@@ -12,24 +12,24 @@ const initialState = {
 export const ProductContext = createContext(initialState);
 
 export const ProductProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(ProductReducer, initialState);
+    const [state, dispatch] = useReducer(ProductReducer, initialState);
 
-  const getProducts = async () => {
-    const res = await axios.get(API_URL + "/products");
-    dispatch({
-      type: "GET_PRODUCTS",
-      payload: res.data.allproducts,
-    });
-  }
+    const getProducts = async () => {
+        const res = await axios.get(API_URL + "/products")
+        dispatch({
+            type: "GET_PRODUCTS",
+            payload: res.data.allproducts
+        })
+    }
 
-  return (
-    <ProductContext.Provider
-      value={{
-        products: state.products,
-        getProducts,
-      }}
-    >
-      {children}
-    </ProductContext.Provider>
-  )
+    return (
+        <ProductContext.Provider
+            value={{
+              products: state.products,
+              getProducts
+            }}
+        >
+            {children}
+        </ProductContext.Provider>
+    )
 }

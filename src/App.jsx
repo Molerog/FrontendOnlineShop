@@ -14,25 +14,25 @@ import Products from "./components/Products/Products";
 import Footer from "./components/Footer/Footer";
 
 function App() {
-  return (
-    <div className="GlobalContainer">
-      <UserProvider>
-        <ProductProvider>
-          <Router>
-            <Header />
-            <Routes>
-              <Route path="/" element={<Register />} />
-              <Route path="/home" element={<Home />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/profile" element={<Profile />} />
-            </Routes>
-            <Footer />
-          </Router>
-        </ProductProvider>
-      </UserProvider>
-    </div>
-  )
+    return (
+        <div className="GlobalContainer">
+            <UserProvider>
+                <ProductProvider>
+                    <Router>
+                        <Header />
+                        <Routes>
+                            <Route path="/" element={<Register />} />
+                            <Route path="/home" element={<Home />} />
+                            <Route path="/products" element={<Products />} />
+                            <Route path="/login" element={<Login />} />
+                            <Route path="/profile" element={<Profile />} />
+                        </Routes>
+                        <Footer />
+                    </Router>
+                </ProductProvider>
+            </UserProvider>
+        </div>
+    )
 }
 
 export default App
