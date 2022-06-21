@@ -1,8 +1,6 @@
 import React from "react";
 import "./Header.scss";
 import { Link } from "react-router-dom";
-// import { useContext } from "react";
-// import { UserContext } from "../../context/UserContext/UserState";
 
 const Header = () => {
   // const { token, logout } = useContext(UserContext);
