@@ -9,9 +9,12 @@ const Profile = () => {
 
   if (!user) {
     return <span>Cargando...</span>;
-  }
+  } 
+  
+    return <div>{user.user.name}</div>;
 
-  return <div>{user.user.name}</div>;
+  
+
 };
 
 export default Profile;

@@ -1,7 +1,11 @@
 import React from "react";
 import { useContext, useEffect } from "react";
 import { ProductContext } from "../../../context/ProductState";
-import { EditOutlined, EllipsisOutlined, SettingOutlined } from "@ant-design/icons";
+import {
+  EditOutlined,
+  EllipsisOutlined,
+  SettingOutlined,
+} from "@ant-design/icons";
 import { Avatar, Card, Button } from "antd";
 
 const { Meta } = Card;
@@ -47,7 +51,7 @@ const Product = () => {
         )
     })
 
-    return <>{productlist}</>
-}
+  return <>{productlist}</>;
+};
 
-export default Product
+export default Product;
