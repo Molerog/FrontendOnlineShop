@@ -8,9 +8,7 @@ const Header = () => {
   const { token, logout } = useContext(UserContext);
   const logoutUser = () => {
     logout();
-  };
-
-  
+  }; 
   return (
     <header>
       <div className="overlay">
@@ -29,7 +27,7 @@ const Header = () => {
             <Link to="/profile">Profile</Link>
           </span>
           <button onClick = {logoutUser}>
-            <Link to= '/register'>Logout</Link>
+            <Link to= '/'>Logout</Link>
           </button>
           </>
           ):(

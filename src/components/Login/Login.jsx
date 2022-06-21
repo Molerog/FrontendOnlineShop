@@ -13,13 +13,11 @@ const Login = () => {
       login(values);
     };
 
-    useEffect(() => {
-        setTimeout(() => {
+    useEffect(() => {       
           const foundToken = JSON.parse(localStorage.getItem("token"));
           if (foundToken) {
           navigate("/profile")
-        }
-        },2000)  
+        } 
    
     }, [login])
   
