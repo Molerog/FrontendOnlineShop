@@ -1,6 +1,5 @@
 import React from "react";
 import { useContext, useEffect } from "react";
-import { render } from "react-dom";
 import { ProductContext } from "../../../context/ProductState";
 import { EditOutlined, EllipsisOutlined, SettingOutlined } from "@ant-design/icons";
 import { Avatar, Card, Button } from "antd";
@@ -41,7 +40,7 @@ const Product = () => {
                         avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
                         title={element.product}
                         description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis ullam enim obcaecati pariatur numquam assumenda magni ab eius dicta alias animi rem deserunt reprehenderit dolorem, quasi iure corrupti cupiditate tenetur."
-                        // extra={<Button onClick={onClick}>Añadir al carrito</Button>} 
+                        extra={<Button onClick={() =>addCart(products)}>Añadir al carrito</Button>} 
                     />
                 </Card>
             </div>
