@@ -4,6 +4,7 @@ import "antd/dist/antd.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { UserProvider } from "./context/UserState";
 import { ProductProvider } from "./context/ProductState";
+import { OrderProvider } from "./context/OrderState";
 
 import Header from "./components/Header/Header";
 import Register from "./components/Register/Register";
@@ -19,18 +20,20 @@ function App() {
         <div className="GlobalContainer">
             <UserProvider>
                 <ProductProvider>
-                    <Router>
-                        <Header />
-                        <Routes>
-                            <Route path="/" element={<Register />} />
-                            <Route path="/home" element={<Home />} />
-                            <Route path="/products" element={<Products />} />
-                            <Route path="/login" element={<Login />} />
-                            <Route path="/profile" element={<Profile />} />
-                            <Route path="/cart" element={<Cart />} />
-                        </Routes>
-                        <Footer />
-                    </Router>
+                    <OrderProvider>
+                        <Router>
+                            <Header />
+                            <Routes>
+                                <Route path="/" element={<Register />} />
+                                <Route path="/home" element={<Home />} />
+                                <Route path="/products" element={<Products />} />
+                                <Route path="/login" element={<Login />} />
+                                <Route path="/profile" element={<Profile />} />
+                                <Route path="/cart" element={<Cart />} />
+                            </Routes>
+                            <Footer />
+                        </Router>
+                    </OrderProvider>
                 </ProductProvider>
             </UserProvider>
         </div>
