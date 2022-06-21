@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { OrderContext } from "../../context/OrderState";
 import { ProductContext } from "../../context/ProductState";
 
+
 const Cart = () => {
     const { cart,clearCart } = useContext(ProductContext);
     const { createOrder } = useContext(OrderContext);

@@ -1,11 +1,7 @@
 import React from "react";
 import { useContext, useEffect } from "react";
 import { ProductContext } from "../../../context/ProductState";
-import {
-  EditOutlined,
-  EllipsisOutlined,
-  SettingOutlined,
-} from "@ant-design/icons";
+
 import { Avatar, Card, Button } from "antd";
 
 const { Meta } = Card;
@@ -21,9 +17,9 @@ const Product = () => {
         localStorage.setItem("cart", JSON.stringify(cart));
     }, [cart]);
 
-    const productlist = products.map((element) => {
+    const productlist = products.map((product) => {
         return (
-            <div key= {element.id}>
+            <div key= {product.id}>
                 <Card
                     style={{
                         width: 300,
@@ -35,16 +31,14 @@ const Product = () => {
                         />
                     }
                     actions={[
-                        <SettingOutlined key="setting" />,
-                        <EditOutlined key="edit" />,
-                        <EllipsisOutlined key="ellipsis" />
+                        <Button onClick={() =>addCart(product)}>Añadir al carrito</Button> 
                     ]}
                 >
                     <Meta
                         avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-                        title={element.product}
+                        title={product.product}
                         description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis ullam enim obcaecati pariatur numquam assumenda magni ab eius dicta alias animi rem deserunt reprehenderit dolorem, quasi iure corrupti cupiditate tenetur."
-                        extra={<Button onClick={() =>addCart(products)}>Añadir al carrito</Button>} 
+                        
                     />
                 </Card>
             </div>
