@@ -16,9 +16,9 @@ const Login = () => {
     useEffect(() => {       
           const foundToken = JSON.parse(localStorage.getItem("token"));
           if (foundToken) {
+            console.log(foundToken)
           navigate("/profile")
-        } 
-   
+        }    
     }, [login])
   
     const onFinishFailed = (errorInfo) => {

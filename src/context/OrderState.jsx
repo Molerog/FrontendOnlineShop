@@ -1,6 +1,6 @@
 import { createContext, useReducer } from "react";
 import axios from "axios";
-import ProductReducer from "./ProductReducer";
+import OrderReducer from "./OrderReducer";
 
 const API_URL = "http://localhost:8000";
 
@@ -10,11 +10,11 @@ export const OrderContext = createContext();
 const token = JSON.parse(localStorage.getItem("token"));
 const initialState = {
     token: token ? token : null,
-    order: {}
+    order: []
 }
 
 export const OrderProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(ProductReducer, initialState);
+    const [state, dispatch] = useReducer(OrderReducer, initialState);
 
     const createOrder = async (order) => {
         const token = JSON.parse(localStorage.getItem("token"));
@@ -38,12 +38,12 @@ export const OrderProvider = ({ children }) => {
                     authorization: token,
                   },
             });
-            console.log(res)
+           
             dispatch({
-                type:'GET_ORDER',
-                payload: res
+                type:'GET_ORDERS',
+                payload: res.data.ordersProduct
             })
-            
+            console.log('soy la API',res.data.ordersProduct)
         } catch (error) {
             
         }
@@ -52,9 +52,9 @@ export const OrderProvider = ({ children }) => {
     return (
         <OrderContext.Provider
             value={{
+                order:state.order,
                 createOrder,
                 getOrder,
-                order:state.order
             }}
         >
             {children}
