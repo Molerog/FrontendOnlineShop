@@ -15,10 +15,9 @@ const Profile = () => {
     return <span>Cargando...</span>;
   }
   const orderList = user.user.Orders.map((element) => {
-    console.log(element.Products)
     return (
         <div key={element.id}>
-            <span>{element.date}</span>
+            <span>{element.date.split("T")[0]}</span>
             {element.Products.map(product =>{
                 return (<span>{product.product}</span>)
             })}
@@ -35,6 +34,7 @@ const Profile = () => {
       </div>
       <br />
       <h3>Pedidos</h3>
+      <h4>{orderList.date}</h4>
       <div>{orderList}</div>
     </>
   );
