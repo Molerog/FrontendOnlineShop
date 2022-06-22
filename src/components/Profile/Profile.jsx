@@ -9,7 +9,6 @@ const Profile = () => {
     getUserInfo();  
   }, []);
 
-  console.log(user)
 
   if (!user) {
     return <span>Cargando...</span>;
@@ -19,8 +18,8 @@ const Profile = () => {
         <div key={element.id}>
             <span>{element.date.split("T")[0]}</span>
             {element.Products.map(product =>{
-                return (<span>{product.product}</span>)
-            })}
+                return product.product
+            })}          
         </div>     
     );
   });

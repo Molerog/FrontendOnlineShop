@@ -6,7 +6,6 @@ import { ProductContext } from "../../context/ProductState";
 const Cart = () => {
     const { cart,clearCart } = useContext(ProductContext);
     const { createOrder } = useContext(OrderContext);
-
     useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(cart))
     }, [cart]);
