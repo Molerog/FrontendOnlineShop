@@ -19,7 +19,6 @@ export const UserProvider = ({ children }) => {
 
   const register = async (user) => {
     const res = await axios.post(API_URL + "/users", user);
-    console.log(res.data);
     dispatch({
       type: "REGISTER",
       payload: res.data,
