@@ -5,7 +5,7 @@ import Product from "./Product/Product";
 
 function Products() {
     return (
-        <div className='ProductsContainer'>
+        <div className = 'ProductsContainer'>
             <Product/>
         </div>
     )
