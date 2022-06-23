@@ -8,7 +8,7 @@ import {useNavigate} from 'react-router-dom'
 const Cart = () => {
   const products = JSON.parse(localStorage.getItem("cart"));
 
-  const { cart, clearCart } = useContext(ProductContext);
+  const { cart, clearCart, deleteOne } = useContext(ProductContext);
   const { createOrder } = useContext(OrderContext);
   const [visible, setVisible] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
@@ -50,6 +50,11 @@ const Cart = () => {
     return <span>No tienes ningún producto en tu carrito</span>;
   }
 
+  const clearProduct = (i) => {
+    deleteOne(i)
+
+  }
+
   const createNewOrder = (showModal) => {
     showModal();
     createOrder(cart);
@@ -62,6 +67,7 @@ const Cart = () => {
       <div className="cart" key={i}>
         <span>{cartItem.product}</span>
         <span> {cartItem.price.toFixed(2)} €</span>
+        <button onClick={() => clearProduct(i)}>Eliminar</button>
       </div>
     );
   });
