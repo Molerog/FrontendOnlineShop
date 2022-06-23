@@ -26,9 +26,7 @@ export const OrderProvider = ({ children }) => {
 
   return (
     <OrderContext.Provider
-      value={{
-        createOrder,
-      }}
+      value={{createOrder}}
     >
       {children}
     </OrderContext.Provider>

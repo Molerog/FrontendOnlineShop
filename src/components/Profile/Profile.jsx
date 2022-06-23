@@ -8,21 +8,27 @@ const Profile = () => {
     getUserInfo();  
   }, []);
 
-
   if (!user) {
     return <span>Cargando...</span>;
   }
+
   const orderList = user.user.Orders.map((element) => {
+<<<<<<< HEAD
     console.log('soy el perfil', element)
+=======
+    console.log(element)
+>>>>>>> 2b8be51b62bdc679269d3cea264754c2b6672052
     return (
         <div key={element.id}>
-            <p>{element.date.split("T")[0]}</p>
-            {element.Products.map(product =>{
-                return product.product
-            })}        
-        </div>     
+            <h4>{element.date.split("T")[0]}</h4>
+            <span>{element.Products.map((product) =>{
+                return (product.product)
+            })}</span>
+            <p>Cantidad total de productos: {element.Products.length}</p>
+        </div>
     );
   });
+  
   return (
     <>
       <div>
@@ -31,11 +37,10 @@ const Profile = () => {
         <br />
         <span>{user.user.email}</span>
       </div>
-      <br />
-      <h3>Pedidos</h3>
-      <h4>{orderList.date}</h4>
-      <p>{orderList}</p>
-      <p>Cantidad total de productos: {orderList.length}</p> 
+      <div>
+        <h3>Pedidos</h3>
+        <span>{orderList}</span>
+      </div>
     </>
   );
 };
