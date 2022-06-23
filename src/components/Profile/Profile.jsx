@@ -1,7 +1,6 @@
 import { useContext, useEffect } from "react";
 import { UserContext } from "../../context/UserState";
 
-
 const Profile = () => {
   const { getUserInfo, user } = useContext(UserContext);
  
@@ -16,10 +15,10 @@ const Profile = () => {
   const orderList = user.user.Orders.map((element) => {
     return (
         <div key={element.id}>
-            <span>{element.date.split("T")[0]}</span>
+            <p>{element.date.split("T")[0]}</p>
             {element.Products.map(product =>{
                 return product.product
-            })}          
+            })}        
         </div>     
     );
   });
@@ -34,7 +33,8 @@ const Profile = () => {
       <br />
       <h3>Pedidos</h3>
       <h4>{orderList.date}</h4>
-      <div>{orderList}</div>
+      <p>{orderList}</p>
+      <p>Cantidad total de productos: {orderList.length}</p> 
     </>
   );
 };
