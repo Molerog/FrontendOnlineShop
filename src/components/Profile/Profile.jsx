@@ -4,7 +4,7 @@ import { UserContext } from "../../context/UserState";
 
 const Profile = () => {
   const { getUserInfo, user } = useContext(UserContext);
- 
+ console.log('soy el profile', user)
   useEffect(() => {
     getUserInfo();  
   }, []);
@@ -14,6 +14,7 @@ const Profile = () => {
     return <span>Cargando...</span>;
   }
   const orderList = user.user.Orders.map((element) => {
+    console.log('soy el perfil', element)
     return (
         <div key={element.id}>
             <span>{element.date.split("T")[0]}</span>
