@@ -9,21 +9,35 @@ const Profile = () => {
   }, []);
 
   if (!user) {
-    return <span>Cargando...</span>;
+    return <span>Cargando...</span>
   }
 
   const orderList = user.user.Orders.map((element) => {
-    console.log(element)
-    return (
-        <div key={element.id}>
-            <h4>{element.date.split("T")[0]}</h4>
-            <span>{element.Products.map((product) =>{
-                return (product.product)
-            })}</span>
-            <p>Cantidad total de productos: {element.Products.length}</p>
-        </div>
-    );
+    
+      return (
+          <div key={element.id}>
+              <h4>{element.date.split("T")[0]}</h4>
+              <span>{element.Products.map((product) =>{
+                  return (product.product)
+              })}</span>
+              <p>Cantidad total de productos: {element.Products.length}</p>
+          </div>
+      )
   });
+
+  if (orderList.length === 0) {
+    return (
+      <>
+        <div>
+          <h3>Datos personales</h3>
+          <span>{user.user.name}</span>
+          <br />
+          <span>{user.user.email}</span>
+        </div>
+        <span>Todavía no has hecho ningún pedido</span>
+      </>
+    )        
+  }
   
   return (
     <>
@@ -41,4 +55,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Profile

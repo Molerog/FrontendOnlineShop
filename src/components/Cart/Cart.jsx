@@ -23,7 +23,7 @@ const Cart = () => {
     const cartItem = cart.map((cartItem, i) => {
         return (
             <div className="cart" key={i}>
-                <span>{cartItem.product}:    </span>
+                <span>{cartItem.product}:</span>
                 <span> {cartItem.price.toFixed(2)} €</span>
             </div>
         )
