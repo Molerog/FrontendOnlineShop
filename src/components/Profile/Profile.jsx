@@ -13,11 +13,7 @@ const Profile = () => {
   }
 
   const orderList = user.user.Orders.map((element) => {
-<<<<<<< HEAD
     console.log('soy el perfil', element)
-=======
-    console.log(element)
->>>>>>> 2b8be51b62bdc679269d3cea264754c2b6672052
     return (
         <div key={element.id}>
             <h4>{element.date.split("T")[0]}</h4>
