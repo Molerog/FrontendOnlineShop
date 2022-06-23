@@ -3,7 +3,7 @@ import { OrderContext } from "../../context/OrderState";
 import { ProductContext } from "../../context/ProductState";
 import { Modal } from "antd";
 import { useState } from "react";
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const products = JSON.parse(localStorage.getItem("cart"));
@@ -12,30 +12,27 @@ const Cart = () => {
   const { createOrder } = useContext(OrderContext);
   const [visible, setVisible] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
-  const [modalText, setModalText] = useState(products.map(e => {
-        return <span>{e.product}</span>
-  }));
-  const navigate = useNavigate()
+  const [modalText, setModalText] = useState(
+    products.map((e) => {
+      return <span>{e.product}</span>;
+    })
+  );
+  const navigate = useNavigate();
 
   const showModal = () => {
     setVisible(true);
   };
 
-  const handleOk = (useEffect) => {
-    setModalText('Tu compra ha sido realizada con éxito');
+  const handleOk = () => {
+    setModalText("Tu compra ha sido realizada con éxito");
     setConfirmLoading(true);
     setTimeout(() => {
       setVisible(false);
       setConfirmLoading(false);
-      clearCart()
-      navigate('/profile')
+      clearCart();
+      navigate("/profile");
     }, 2000);
-    
-};
-// useEffect(() => {       
-//   navigate("/profile")
-// } , [])
-
+  };
 
   const handleCancel = () => {
     console.log("Clicked cancel button");
@@ -53,8 +50,6 @@ const Cart = () => {
   const createNewOrder = (showModal) => {
     showModal();
     createOrder(cart);
-
-    // clearCart();
   };
 
   const cartItem = cart.map((cartItem, i) => {
