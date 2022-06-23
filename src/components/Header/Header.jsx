@@ -4,8 +4,11 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserState";
 import { ShoppingCartOutlined } from "@ant-design/icons";
+import { Badge } from 'antd';
+import { ProductContext } from "../../context/ProductState";
 
 const Header = () => {
+  const {cart} = useContext(ProductContext);
   const { token, logout } = useContext(UserContext);
   const logoutUser = () => {
     logout();
@@ -31,7 +34,9 @@ const Header = () => {
               </span>
               <span>
                 <Link to="/cart">
-                  <ShoppingCartOutlined />
+                  <Badge count={cart.length}>
+                    <ShoppingCartOutlined />
+                  </Badge>
                 </Link>
               </span>
               <button onClick={logoutUser}>
