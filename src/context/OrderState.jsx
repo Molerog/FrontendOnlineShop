@@ -11,7 +11,7 @@ export const OrderProvider = ({ children }) => {
     try {
       await axios.post(
         API_URL + "/orders",
-        { productIds: order.map((p) => p.id) },
+        { ProductId: order.map((p) => p.id) },
         {
           headers: {
             authorization: token,
@@ -25,9 +25,7 @@ export const OrderProvider = ({ children }) => {
 
   return (
     <OrderContext.Provider
-      value={{
-        createOrder,
-      }}
+      value={{createOrder}}
     >
       {children}
     </OrderContext.Provider>

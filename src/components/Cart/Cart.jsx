@@ -16,12 +16,11 @@ const Cart = () => {
 
     const createNewOrder = () => {
         createOrder(cart);
-        clearCart();
+        // clearCart();
     };
     
 
     const cartItem = cart.map((cartItem, i) => {
-        console.log(cartItem)
         return (
             <div className="cart" key={i}>
                 <span>{cartItem.product}:    </span>
