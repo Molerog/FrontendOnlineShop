@@ -17,6 +17,12 @@ const products = (state, action) => {
                 ...state,
                 cart: []
             };
+        case "DELETE_ONE":
+            state.cart.splice(action.payload, 1)
+            return {
+                ...state,
+                cart: [...state.cart]
+            };
 
         default:
             return state
