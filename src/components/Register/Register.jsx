@@ -14,7 +14,7 @@ const Register = () => {
     const onFinish = (values) => {
         register(values);
         setTimeout(() => {
-            navigate("/");
+            navigate("/home");
             //   clearMessage()
         }, 3000)
     };
@@ -68,7 +68,7 @@ const Register = () => {
 
                 <Form.Item wrapperCol={{ offset: 9, span: 16 }}>
                     <Button type="primary" htmlType="submit">
-                        Submit
+                        Enviar
                     </Button>
                 </Form.Item>
             </Form>

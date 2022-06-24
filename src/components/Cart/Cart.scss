@@ -63,7 +63,11 @@
     flex: 1;
     padding:2em;
   }
- 
+}
 }
 
+.ModalContainer{
+  display:flex;
+  flex-direction: column;
+  
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import "./Header.scss";
+import "../Header/Header.scss";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserState";
@@ -40,7 +40,7 @@ const Header = () => {
                 </Link>
               </span>
               <button onClick={logoutUser}>
-                <Link to="/register">Logout</Link>
+                <Link to="/home">Logout</Link>
               </button>
             </>
           ) : (

@@ -7,17 +7,17 @@ import { useNavigate } from "react-router-dom";
 import "../Cart/Cart.scss";
 
 const Cart = () => {
-  const products = JSON.parse(localStorage.getItem("cart"));
+  // const products = JSON.parse(localStorage.getItem("cart"));
 
   const { cart, clearCart, deleteOne } = useContext(ProductContext);
+  const initialCart = cart.map((e) => {
+   return  <span>{e.product}</span>
+  });
   const { createOrder } = useContext(OrderContext);
   const [visible, setVisible] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
-  const [modalText, setModalText] = useState(
-    products.map((e) => {
-      return <span>{e.product}</span>;
-    })
-  );
+  const [modalText, setModalText] = useState(initialCart);
+
   const navigate = useNavigate();
 
   const showModal = () => {
@@ -25,18 +25,18 @@ const Cart = () => {
   };
 
   const handleOk = () => {
+    // setSubtotal("")
     setModalText("Tu compra ha sido realizada con éxito");
     setConfirmLoading(true);
     setTimeout(() => {
       setVisible(false);
       setConfirmLoading(false);
-      clearCart();
+      clearCart(initialCart);
       navigate("/profile");
     }, 2000);
   };
 
   const handleCancel = () => {
-    console.log("Clicked cancel button");
     setVisible(false);
   };
 
@@ -71,40 +71,41 @@ const Cart = () => {
 
   return (
     <div className="Super">
-    <div className="GeneralContainer">
-      <div className="MainContainer">
-        <div className="ProductsContainer">{cartItem}</div>
-        <div className="GlobalInfoContainer">
-          <div className="InfoContainer">
-            <span className="QuantityContainer">Cantidad total: {cart.length}</span>
-            <span className="TotalContainer">
-              Precio total:{" "}
-              {cart
-                .map((item) => item.price)
-                .reduce((prev, next) => prev + next)} €
-            </span>
-            <button className="ClearContainer" onClick={() => clearCart()}>
-              Vacíar
-            </button>
+      <div className="GeneralContainer">
+        <div className="MainContainer">
+          <div className="ProductsContainer">{cartItem}</div>
+          <div className="GlobalInfoContainer">
+            <div className="InfoContainer">
+              <span className="QuantityContainer">
+                Cantidad total: {cart.length}
+              </span>
+              <span className="TotalContainer">
+                Precio total:{" "}
+                {cart
+                  .map((item) => item.price)
+                  .reduce((prev, next) => prev + next)}{" "}
+                €
+              </span>
+              <button className="ClearContainer" onClick={() => clearCart()}>
+                Vacíar
+              </button>
+            </div>
           </div>
         </div>
+
+        <div className="OrderContainer">
+          <button onClick={() => createNewOrder(showModal)}>Comprar</button>
+        </div>
+        <Modal
+          title="¿Deseas continuar con la compra?"
+          visible={visible}
+          onOk={handleOk}
+          confirmLoading={confirmLoading}
+          onCancel={handleCancel}
+        >
+          <div className="ModalContainer">{modalText}</div>
+        </Modal>
       </div>
-      
-      <div className="OrderContainer">
-        <button onClick={() => createNewOrder(showModal)}>
-          Comprar
-        </button>
-      </div>
-      <Modal
-        title="¿Deseas continuar con la compra?"
-        visible={visible}
-        onOk={handleOk}
-        confirmLoading={confirmLoading}
-        onCancel={handleCancel}
-      >
-        <p>{modalText}</p>
-      </Modal>
-    </div>
     </div>
   );
 };

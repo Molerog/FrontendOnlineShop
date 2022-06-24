@@ -11,6 +11,8 @@ const initialState = {
     cart: cart ? cart : []
 };
 
+
+
 export const ProductContext = createContext(initialState);
 
 export const ProductProvider = ({ children }) => {
@@ -32,6 +34,7 @@ export const ProductProvider = ({ children }) => {
     };
 
     const clearCart = () => {
+        console.log(initialState)
         dispatch({
             type: "CLEAR_CART",
         });

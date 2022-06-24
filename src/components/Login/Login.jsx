@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { Form, Input, Button } from 'antd';
 import { useContext, useEffect } from 'react';
 import { UserContext } from '../../context/UserState';
@@ -17,7 +17,7 @@ const Login = () => {
           const foundToken = JSON.parse(localStorage.getItem("token"));
           if (foundToken) {
             console.log(foundToken)
-          navigate("/profile")
+          navigate("/home")
         }    
     }, [login])
   
@@ -54,7 +54,7 @@ const Login = () => {
       
                 <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
                     <Button type="primary" htmlType="submit">
-                        Submit
+                        Enviar
                     </Button>
                 </Form.Item>
             </Form>
