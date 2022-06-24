@@ -1,0 +1,46 @@
+.GeneralContainer {
+  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+  // flex-wrap: wrap;
+  flex-direction: column;
+  .ProfileContainer {
+    display: flex;
+    justify-content: center;
+    border: 2px solid blue;
+    width: 40%;
+    margin: auto;
+    padding: 2em;
+    .AvatarContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: purple;
+      flex: 20%;
+    }
+    .DataContainer {
+      background-color: green;
+      flex: 80%;
+      padding: 1em;
+    }
+  }
+  .OrdersContainer {
+    padding: 2em;
+    border: 2px solid purple;
+    .TicketsContainer {
+      display: flex;
+      justify-content: space-around;
+      border: 2px solid yellow;
+      flex-wrap: wrap;
+      .TicketContainer{
+        margin:1em;
+        background-color: grey;
+        .ProductsContainer {
+            border: 2px solid green;
+            flex-direction: column;
+            min-height: 30vh;
+        }
+      }
+    }
+  }
+}

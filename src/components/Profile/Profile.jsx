@@ -1,58 +1,71 @@
 import { useContext, useEffect } from "react";
 import { UserContext } from "../../context/UserState";
+import "../Profile/Profile.scss";
 
 const Profile = () => {
   const { getUserInfo, user } = useContext(UserContext);
- console.log('soy el profile', user)
+  console.log("soy el profile", user);
   useEffect(() => {
-    getUserInfo();  
+    getUserInfo();
   }, []);
 
   if (!user) {
-    return <span>Cargando...</span>
+    return <span>Cargando...</span>;
   }
 
   const orderList = user.user.Orders.map((element) => {
-    
-      return (
-          <div key={element.id}>
-              <h4>{element.date.split("T")[0]}</h4>
-              <span>{element.Products.map((product) =>{
-                  return (product.product)
-              })}</span>
-              <p>Cantidad total de productos: {element.Products.length}</p>
-          </div>
-      )
+    return (
+      <div className='TicketContainer'key={element.id}>
+        <h4>{element.date.split("T")[0]}</h4>
+        <span className='ProductsContainer'>
+          {element.Products.map((product) => {
+            return <div className= 'ProductContainer'>{product.product}</div>
+          })}
+        </span>
+        <p>Cantidad total de productos: {element.Products.length}</p>
+      </div>
+    );
   });
 
   if (orderList.length === 0) {
     return (
-      <>
-        <div>
-          <h3>Datos personales</h3>
-          <span>{user.user.name}</span>
-          <br />
-          <span>{user.user.email}</span>
+      <div className="GeneralContainer">
+      <div className="ProfileContainer">
+        <div className="AvatarContainer">AVATAR</div>
+        <div className="DataContainer">
+          <h3>Datos Personales</h3>
+          <p>{user.user.name}</p>
+          <p>{user.user.email}</p>
         </div>
-        <span>Todavía no has hecho ningún pedido</span>
-      </>
-    )        
+      </div>
+      <div className= 'OrdersContainer'>
+        <h2>Pedidos</h2>
+        <div className= 'TicketsContainer'>
+           <span>Todavía no tiene ningún producto</span>
+        </div>
+      </div>
+    </div>
+    );
   }
-  
+
   return (
-    <>
-      <div>
-        <h3>Datos personales</h3>
-        <span>{user.user.name}</span>
-        <br />
-        <span>{user.user.email}</span>
+    <div className="GeneralContainer">
+      <div className="ProfileContainer">
+        <div className="AvatarContainer">AVATAR</div>
+        <div className="DataContainer">
+          <h3>Datos Personales</h3>
+          <p>{user.user.name}</p>
+          <p>{user.user.email}</p>
+        </div>
       </div>
-      <div>
-        <h3>Pedidos</h3>
-        <span>{orderList}</span>
+      <div className= 'OrdersContainer'>
+        <h2>Pedidos</h2>
+        <div className= 'TicketsContainer'>
+           {orderList}
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 
-export default Profile
+export default Profile;
