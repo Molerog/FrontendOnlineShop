@@ -1,10 +1,13 @@
 .ProductsContainer{
+    display:grid;
+   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); 
+  padding: 2em;
+  grid-gap: 4em;
+  margin-top: 2em;
+  border-radius: 10px;
+   div{
     display:flex;
-    justify-content: center;
     flex-wrap: wrap;
-    gap:4em;
-    padding:3em;
-    // div:first-child{
-        
-    // }
+    justify-content: center;
+   }
 }
