@@ -35,6 +35,8 @@
       .TicketContainer{
         margin:1em;
         background-color: grey;
+        flex-basis:500px;
+        padding:1em;
         .ProductsContainer {
             border: 2px solid green;
             flex-direction: column;

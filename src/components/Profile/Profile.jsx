@@ -4,7 +4,6 @@ import "../Profile/Profile.scss";
 
 const Profile = () => {
   const { getUserInfo, user } = useContext(UserContext);
-  console.log("soy el profile", user);
   useEffect(() => {
     getUserInfo();
   }, []);
