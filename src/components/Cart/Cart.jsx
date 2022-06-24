@@ -4,6 +4,7 @@ import { ProductContext } from "../../context/ProductState";
 import { Modal } from "antd";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import '../Cart/Cart.scss'
 
 const Cart = () => {
   const products = JSON.parse(localStorage.getItem("cart"));
@@ -59,19 +60,22 @@ const Cart = () => {
 
   const cartItem = cart.map((cartItem, i) => {
     return (
-      <div className="cart" key={i}>
-        <span>{cartItem.product}</span>
-        <span> {cartItem.price.toFixed(2)} €</span>
-        <button onClick={() => clearProduct(i)}>Eliminar</button>
+      <div className="ProductContainer" key={i}>
+        <span className="NameContainer">{cartItem.product}</span>
+        <span className="PriceContainer"> {cartItem.price.toFixed(2)} €</span>
+        <button className="DeleteContainer" onClick={() => clearProduct(i)}>Eliminar</button>
       </div>
     );
   });
 
   return (
-    <div>
-      {cartItem}
-      <p>Cantidad total de productos: {cart.length}</p>
-      <button onClick={() => clearCart()}>Vacía tu carrito</button>
+    <div className='GeneralContainer'>
+      <div className="ProductsContainer">{cartItem}</div>
+      <div>
+        <p>Cantidad total: {cart.length}</p>
+        <p>Precio total: {cart.map(item => item.price).reduce((prev, next)=> prev + next)}</p>
+        <button onClick={() => clearCart()}>Vacía tu carrito</button>
+      </div>
       <button onClick={() => createNewOrder(showModal)}>Crea tu pedido</button>
       <Modal
         title="¿Deseas continuar con la compra?"
