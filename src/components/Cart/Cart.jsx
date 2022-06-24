@@ -4,7 +4,7 @@ import { ProductContext } from "../../context/ProductState";
 import { Modal } from "antd";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import '../Cart/Cart.scss'
+import "../Cart/Cart.scss";
 
 const Cart = () => {
   const products = JSON.parse(localStorage.getItem("cart"));
@@ -49,9 +49,8 @@ const Cart = () => {
   }
 
   const clearProduct = (i) => {
-    deleteOne(i)
-
-  }
+    deleteOne(i);
+  };
 
   const createNewOrder = (showModal) => {
     showModal();
@@ -63,20 +62,39 @@ const Cart = () => {
       <div className="ProductContainer" key={i}>
         <span className="NameContainer">{cartItem.product}</span>
         <span className="PriceContainer"> {cartItem.price.toFixed(2)} €</span>
-        <button className="DeleteContainer" onClick={() => clearProduct(i)}>Eliminar</button>
+        <button className="DeleteContainer" onClick={() => clearProduct(i)}>
+          Eliminar
+        </button>
       </div>
     );
   });
 
   return (
-    <div className='GeneralContainer'>
-      <div className="ProductsContainer">{cartItem}</div>
-      <div>
-        <p>Cantidad total: {cart.length}</p>
-        <p>Precio total: {cart.map(item => item.price).reduce((prev, next)=> prev + next)}</p>
-        <button onClick={() => clearCart()}>Vacía tu carrito</button>
+    <div className="Super">
+    <div className="GeneralContainer">
+      <div className="MainContainer">
+        <div className="ProductsContainer">{cartItem}</div>
+        <div className="GlobalInfoContainer">
+          <div className="InfoContainer">
+            <span className="QuantityContainer">Cantidad total: {cart.length}</span>
+            <span className="TotalContainer">
+              Precio total:{" "}
+              {cart
+                .map((item) => item.price)
+                .reduce((prev, next) => prev + next)} €
+            </span>
+            <button className="ClearContainer" onClick={() => clearCart()}>
+              Vacíar
+            </button>
+          </div>
+        </div>
       </div>
-      <button onClick={() => createNewOrder(showModal)}>Crea tu pedido</button>
+      
+      <div className="OrderContainer">
+        <button onClick={() => createNewOrder(showModal)}>
+          Comprar
+        </button>
+      </div>
       <Modal
         title="¿Deseas continuar con la compra?"
         visible={visible}
@@ -86,6 +104,7 @@ const Cart = () => {
       >
         <p>{modalText}</p>
       </Modal>
+    </div>
     </div>
   );
 };

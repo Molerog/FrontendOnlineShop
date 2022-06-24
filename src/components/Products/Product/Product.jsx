@@ -2,7 +2,7 @@ import React from "react";
 import { useContext, useEffect } from "react";
 import { ProductContext } from "../../../context/ProductState";
 import { Avatar, Card, Button, notification } from "antd";
-import { useNavigate } from "react-router-dom";
+
 
 const { Meta } = Card;
 
