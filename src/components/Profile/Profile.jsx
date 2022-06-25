@@ -11,8 +11,9 @@ const Profile = () => {
   if (!user) {
     return <span>Cargando...</span>;
   }
-
+  console.log(user)
   const orderList = user.user.Orders.map((element) => {
+    
     return (
       <div className='TicketContainer'key={element.id}>
         <h4>{element.date.split("T")[0]}</h4>
