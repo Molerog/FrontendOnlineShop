@@ -11,7 +11,7 @@ const Cart = () => {
 
   const { cart, clearCart, deleteOne } = useContext(ProductContext);
   const initialCart = cart.map((e) => {
-   return  <span>{e.product}</span>
+    return <span>{e.product}</span>;
   });
   const { createOrder } = useContext(OrderContext);
   const [visible, setVisible] = useState(false);
@@ -45,14 +45,21 @@ const Cart = () => {
   }, [cart]);
 
   if (cart.length <= 0) {
-    return <Empty description={
-    <span>
-      <h2>Tu carro está vacío</h2><span>Parece que no tienes nada añadido al carro. Ve y explora nuestros productos  </span>
-    </span>
-  }
-  image= 'https://cdni.iconscout.com/illustration/free/thumb/empty-cart-4085814-3385483.png'
-  // imageStyle={{height:500}}
-  />;
+    return (
+      <Empty
+        description={
+          <span>
+            <h2>Tu carro está vacío</h2>
+            <span>
+              Parece que no tienes nada añadido al carro. Ve y explora nuestros
+              productos{" "}
+            </span>
+          </span>
+        }
+        image="https://cdni.iconscout.com/illustration/free/thumb/empty-cart-4085814-3385483.png"
+        imageStyle={{height:200}}
+      />
+    );
   }
 
   const clearProduct = (i) => {
