@@ -40,7 +40,7 @@ const Product = () => {
             <Button onClick={() => functions(product)}>
               Añadir al carrito
             </Button>,
-            <Meta title={product.price}/>
+            <Meta className="PriceContainer" title={product.price}/>
           ]}
         >
         

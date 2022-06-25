@@ -14,14 +14,16 @@ const Profile = () => {
 
   const orderList = user.user.Orders.map((element) => {
     return (
-      <div className='TicketContainer'key={element.id}>
+      <div className="TicketContainer" key={element.id}>
         <h4>{element.date.split("T")[0]}</h4>
-        <span className='ProductsContainer'>
+        <span className="ProductsContainer">
           {element.Products.map((product) => {
-            return <div className= 'ProductContainer'>{product.product}</div>
+            return <div className="ProductContainer">{product.product}</div>;
           })}
         </span>
-        <p>Cantidad total de productos: {element.Products.length}</p>
+        <div className="TotalContainer">
+          <p>Cantidad total de productos: {element.Products.length}</p>
+        </div>
       </div>
     );
   });
@@ -29,21 +31,21 @@ const Profile = () => {
   if (orderList.length === 0) {
     return (
       <div className="GeneralContainer">
-      <div className="ProfileContainer">
-        <div className="AvatarContainer">AVATAR</div>
-        <div className="DataContainer">
-          <h3>Datos Personales</h3>
-          <p>{user.user.name}</p>
-          <p>{user.user.email}</p>
+        <div className="ProfileContainer">
+          <div className="AvatarContainer">AVATAR</div>
+          <div className="DataContainer">
+            <h3>Datos Personales</h3>
+            <p>{user.user.name}</p>
+            <p>{user.user.email}</p>
+          </div>
+        </div>
+        <div className="OrdersContainer">
+          <h2>Pedidos</h2>
+          <div className="TicketsContainer">
+            <span>Todavía no tiene ningún producto</span>
+          </div>
         </div>
       </div>
-      <div className= 'OrdersContainer'>
-        <h2>Pedidos</h2>
-        <div className= 'TicketsContainer'>
-           <span>Todavía no tiene ningún producto</span>
-        </div>
-      </div>
-    </div>
     );
   }
 
@@ -57,11 +59,9 @@ const Profile = () => {
           <p>{user.user.email}</p>
         </div>
       </div>
-      <div className= 'OrdersContainer'>
+      <div className="OrdersContainer">
         <h2>Pedidos</h2>
-        <div className= 'TicketsContainer'>
-           {orderList}
-        </div>
+        <div className="TicketsContainer">{orderList}</div>
       </div>
     </div>
   );
