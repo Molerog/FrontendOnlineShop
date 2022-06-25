@@ -8,7 +8,7 @@ import { Badge } from 'antd';
 import { ProductContext } from "../../context/ProductState";
 
 const Header = () => {
-  const {cart} = useContext(ProductContext);
+  const { cart } = useContext(ProductContext);
   const { token, logout } = useContext(UserContext);
   const logoutUser = () => {
     logout();
@@ -16,45 +16,41 @@ const Header = () => {
 
   return (
     <header>
-      <div className="overlay">
-        <div className="LinksContainer">
-          <span>
-            <Link to="/home">Home</Link>
-          </span>
+        <span>
+          <Link to="/home">Home</Link>
+        </span>
 
-          {token ? (
-            <>
-              <span>
-                <Link to="/products">Products</Link>
-              </span>
-              <span>
-                <Link to="/profile">Profile</Link>
-              </span>
-              <span>
-                <Link to="/cart">
-                  <Badge count={cart.length}>
-                    <ShoppingCartOutlined style={{ fontSize: '18px', color: "black" }}/>
-                  </Badge>
-                </Link>
-              </span>
-              <button onClick={logoutUser}>
-                <Link to="/home">Logout</Link>
+        {token ? (
+          <>
+            <span>
+              <Link to="/products">Products</Link>
+            </span>
+            <span>
+              <Link to="/profile">Profile</Link>
+            </span>
+            <span>
+              <Link to="/cart">
+                <Badge count={cart.length}>
+                  <ShoppingCartOutlined style={{ fontSize: '18px', color: "black" }} />
+                </Badge>
+              </Link>
+            </span>
+            <button onClick={logoutUser}>
+              <Link to="/home">Logout</Link>
+            </button>
+          </>
+        ) : (
+          <>
+            <div className="ButtonsContainer">
+              <button>
+                <Link to="/">Register</Link>
               </button>
-            </>
-          ) : (
-            <>
-              <div className="ButtonsContainer">
-                <button>
-                  <Link to="/">Register</Link>
-                </button>
-                <button>
-                  <Link to="/login">Login</Link>
-                </button>
-              </div>
-            </>
-          )}
-        </div>
-      </div>
+              <button>
+                <Link to="/login">Login</Link>
+              </button>
+            </div>
+          </>
+        )}
     </header>
   );
 };
