@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { OrderContext } from "../../context/OrderState";
 import { ProductContext } from "../../context/ProductState";
-import { Modal } from "antd";
+import { Modal, Empty } from "antd";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Cart/Cart.scss";
@@ -45,7 +45,14 @@ const Cart = () => {
   }, [cart]);
 
   if (cart.length <= 0) {
-    return <span>No tienes ningún producto en tu carrito</span>;
+    return <Empty description={
+    <span>
+      <h2>Tu carro está vacío</h2><span>Parece que no tienes nada añadido al carro. Ve y explora nuestros productos  </span>
+    </span>
+  }
+  image= 'https://cdni.iconscout.com/illustration/free/thumb/empty-cart-4085814-3385483.png'
+  // imageStyle={{height:500}}
+  />;
   }
 
   const clearProduct = (i) => {
@@ -71,7 +78,7 @@ const Cart = () => {
 
   return (
     <div className="Super">
-      <div className="GeneralContainer">
+      <div className="CartGeneralContainer">
         <div className="MainContainer">
           <div className="ProductsContainer">{cartItem}</div>
           <div className="GlobalInfoContainer">
