@@ -28,30 +28,32 @@ const Product = () => {
   };
 
   const productlist = products.map((product) => {
-    console.log(product)
+    console.log(product);
     return (
       <div key={product.id}>
         <Card
           style={{
             width: 300,
           }}
-          cover={
-            <img
-              alt="example"
-              src={product.image}
-            />
-          }
+          cover={<img alt="example" src={product.image} />}
           actions={[
             <Button onClick={() => functions(product)}>
               Añadir al carrito
             </Button>,
+            <Meta title={product.price}/>
           ]}
         >
-          <Meta
-            
-            title={product.band}
-            description={product.product}
-          />
+        
+          <Meta title={product.band} />
+          <br></br>
+          <div className= 'MetaContainer'>
+          <Meta className="TitleContainer" description={product.product}/>
+          <br></br>
+          <Meta className="FormatContainer" description={product.Category.category}/>
+          <br></br>
+          <Meta className="GenreContainer" description={product.Section.section}/>
+          </div>
+        
         </Card>
       </div>
     );

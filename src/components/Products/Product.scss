@@ -11,3 +11,41 @@
     justify-content: center;
    }
 }
+
+.ant-card-bordered{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    .ant-card-cover{
+        img{
+        height: 20em;
+        }
+    }
+    .ant-card-body{
+        flex-direction: column;
+        .ant-card-meta-title{
+            font-size: large;
+        }
+        .MetaContainer{
+            flex-direction: column;
+            text-align: center;
+            .TitleContainer{
+                font-size: large;
+                font-weight: 500;
+            }
+            .FormatContainer{
+                font-weight: 500;
+            }
+        }
+    }
+    .ant-card-actions{
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        .ant-card-meta{
+            .ant-card-meta-title::after{
+                content: "€";
+            }
+        }
+    }
+}
