@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext, useEffect } from "react";
 import { ProductContext } from "../../../context/ProductState";
-import { Card, Button, notification } from "antd";
+import { Card, Button, notification, Image } from "antd";
 
 const { Meta } = Card;
 
@@ -35,12 +35,12 @@ const Product = () => {
           style={{
             width: 300,
           }}
-          cover={<img alt="example" src={product.image} />}
+          cover={<Image alt="example" src={product.image} />}
           actions={[
             <Button onClick={() => functions(product)}>
               Añadir al carrito
             </Button>,
-            <Meta title={product.price}/>
+            <Meta className="PriceContainer" title={product.price}/>
           ]}
         >
         
