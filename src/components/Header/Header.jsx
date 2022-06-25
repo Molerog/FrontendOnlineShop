@@ -17,8 +17,7 @@ const Header = () => {
   return (
     <header>
       <div className="overlay">
-        <h1>Simply The Best</h1>
-        <h3>Reasons for Choosing US</h3>
+        {/* <h1>Simply The Best</h1> */}
         <div className="LinksContainer">
           <span>
             <Link to="/home">Home</Link>
@@ -35,7 +34,7 @@ const Header = () => {
               <span>
                 <Link to="/cart">
                   <Badge count={cart.length}>
-                    <ShoppingCartOutlined />
+                    <ShoppingCartOutlined style={{ fontSize: '18px', color: "black" }}/>
                   </Badge>
                 </Link>
               </span>
