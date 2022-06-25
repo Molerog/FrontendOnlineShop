@@ -13,6 +13,11 @@ header{
 			color: purple;
 		}
 	}
+	.ButtonsContainer{
+		width: 10em;
+		display: flex;
+		justify-content: space-around;
+	}
 	button{
 		border: none;
 		border-radius: 10px;

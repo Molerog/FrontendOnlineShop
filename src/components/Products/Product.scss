@@ -1,49 +1,63 @@
-.ProductsContainer{
-    display:grid;
-   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); 
-  padding: 2em;
-  grid-gap: 4em;
-  margin-top: 2em;
-  border-radius: 10px;
-   div{
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: center;
-   }
+.ProductsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    padding: 2em;
+    grid-gap: 4em;
+    margin-top: 2em;
+    border-radius: 10px;
+
+    div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
-.ant-card-bordered{
-    display:flex;
+.ant-card-bordered {
+    display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    .ant-card-cover{
-        img{
-        height: 20em;
+
+    .ant-card-cover {
+        img {
+            height: 20em;
         }
     }
-    .ant-card-body{
+
+    .ant-card-body {
         flex-direction: column;
-        .ant-card-meta-title{
+
+        .ant-card-meta-title {
             font-size: large;
         }
-        .MetaContainer{
+
+        .MetaContainer {
             flex-direction: column;
             text-align: center;
-            .TitleContainer{
+
+            .TitleContainer {
                 font-size: large;
                 font-weight: 500;
             }
-            .FormatContainer{
+
+            .FormatContainer {
                 font-weight: 500;
             }
         }
     }
-    .ant-card-actions{
+
+    .ant-card-actions {
         display: flex;
         align-items: center;
         flex-direction: row-reverse;
-        .ant-card-meta{
-            .ant-card-meta-title::after{
+
+        button:hover{
+            color:purple;
+            border-color: purple;
+        }
+
+        .ant-card-meta {
+            .ant-card-meta-title::after {
                 content: "€";
             }
         }
