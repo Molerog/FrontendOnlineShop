@@ -15,13 +15,9 @@ const Profile = () => {
   if (!user) {
     return <span>Cargando...</span>;
   }
-<<<<<<< HEAD
 $(".info dd").each(function () {
   $(this).css({ width: $(this).text() + "%" });
 });
-=======
-  console.log(user)
->>>>>>> fb3ac2de0e8c45a793844d11ec02e6380f3e7678
   const orderList = user.user.Orders.map((element) => {
     
     return (
