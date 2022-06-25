@@ -6,12 +6,11 @@ header{
 	span{
 		a{
 			color: black;
-			font-weight: 500;
+			font-weight: 600;
 			font-size: 15px;
 		}
 		:hover{
 			color: purple;
-			text-decoration: underline;
 		}
 	}
 	button{
@@ -24,7 +23,7 @@ header{
 			font-size: 15px;
 		}
 		:hover{
-			color: black;
+			color: purple;
 		}
 	}
 }
