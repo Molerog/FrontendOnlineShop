@@ -17,7 +17,6 @@ const Header = () => {
   return (
     <header>
       <div className="overlay">
-        {/* <h1>Simply The Best</h1> */}
         <div className="LinksContainer">
           <span>
             <Link to="/home">Home</Link>

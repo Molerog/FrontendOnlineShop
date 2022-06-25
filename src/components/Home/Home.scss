@@ -1,10 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Smooch&display=swap');
+
 .CentralContainer {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     background-image: url('../../Assets/fondovinilo.webp');
     background-position: center;
     flex: 1;
     background-size: cover;
+    h1{
+        color: white;
+        padding: 1.5em;
+        font-family: 'Smooch', cursive, sans-serif;
+        font-size: 50px;
+        background: radial-gradient(ellipse closest-side, rgba(211, 211, 211, 0.63), rgba(255, 255, 255, 0));
+
+    }
 }
