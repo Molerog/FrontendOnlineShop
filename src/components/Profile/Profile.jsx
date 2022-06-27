@@ -104,17 +104,6 @@ $(".info dd").each(function () {
             </ul>
           </div>
         </section>
-
-        {/* <div className="ProfileContainer">
-          <div className="AvatarContainer">
-            <img src={picture}></img>
-          </div>
-          <div className="DataContainer">
-            <h3>Datos Personales</h3>
-            <p>{user.user.name}</p>
-            <p>{user.user.email}</p>
-          </div>
-        </div> */}
         <div className="OrdersContainer">
           <div className="TicketsContainer">
             <span><Empty /></span>
@@ -192,17 +181,7 @@ $(".info dd").each(function () {
           </ul>
         </div>
       </section>
-
-      {/* <div className="ProfileContainer">
-        <div className="AvatarContainer"><img src={picture}></img></div>
-        <div className="DataContainer">
-          <h3>Datos Personales</h3>
-          <p>{user.user.name}</p>
-          <p>{user.user.email}</p>
-        </div>
-      </div> */}
       <div className="OrdersContainer">
-        <h2>Pedidos</h2>
         <div className="TicketsContainer">{orderList}</div>
       </div>
     </div>
