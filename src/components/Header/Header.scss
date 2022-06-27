@@ -2,7 +2,7 @@ header{
 	display: flex;
 	justify-content: space-around;
 	padding: 1.5em;
-	background-color: lightgray;
+	background-color: rgb(128, 90, 128);
 	span{
 		a{
 			color: black;
@@ -20,7 +20,7 @@ header{
 	}
 	button{
 		border: none;
-		border-radius: 10px;
+		border-radius: 5px;
 		background-color: rgba(128, 0, 128, 0.514);
 		a{
 			color: black;

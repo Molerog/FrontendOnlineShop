@@ -1,72 +1,94 @@
-.Super{
-   display:flex;
-   justify-content: center; 
-
-
-.CartGeneralContainer {
-  border: 2px solid red;
+.Super {
   display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  padding: 5em;
-  width: 70%;
-  .MainContainer {
-    border: 2px solid purple;
-    flex: 5;
-    .ProductsContainer {
-      border: 2px solid blue;
-      flex-direction: column;
-      padding: 2em;
-      width: 100%;
-      .ProductContainer {
-        border: 2px solid green;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        .NameContainer {
-          flex: 5;
-        }
-        .PriceContainer {
-          flex: 5;
-        }
-        .DeleteContainer {
-          flex: 1;
-        }
-      }
-    }
-    .GlobalInfoContainer {
-      border: 2px solid orange;
-      flex-direction: column;
-      padding: 2em;
-      width: 100%;
-      .InfoContainer {
-        border: 2px solid yellow;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        .QuantityContainer {
-          flex: 5;
-        }
-        .TotalContainer {
-          flex: 5;
-        }
-        .ClearContainer {
-          flex: 1;
-        }
-      }
-    }
-  }
-  .OrderContainer {
-    display:flex;
-    justify-content: center;
-    border: 2px solid black;
-    flex: 1;
-    padding:2em;
-  }
-}
-}
+  justify-content: center;
 
-.ModalContainer{
-  display:flex;
-  flex-direction: column;
+  .CartGeneralContainer {
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 5em;
+    width: 70%;
+
+    .MainContainer {
+      flex: 5;
+
+      .ProductsContainer {
+        flex-direction: column;
+        padding: 2em;
+        width: 100%;
+
+        .ProductContainer {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+
+          .NameContainer {
+            flex: 5;
+          }
+
+          .PriceContainer {
+            flex: 3;
+          }
+
+          .DeleteContainer {
+            flex: 1;
+            border-radius: 5px;
+            border-width: 1px;
+          }
+        }
+      }
+
+      .GlobalInfoContainer {
+        flex-direction: column;
+        padding: 2em;
+        width: 100%;
+
+        .InfoContainer {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          font-weight: 500;
+
+          .QuantityContainer {
+            flex: 5;
+          }
+
+          .TotalContainer {
+            flex: 3;
+          }
+
+          .ClearContainer {
+            flex: 1;
+            font-weight: 500;
+            border-radius: 5px;
+            border-width: 1px;
+          }
+        }
+      }
+    }
+
+    .OrderContainer {
+      display: flex;
+      justify-content: center;
+      flex: 1;
+      padding: 2em;
+
+      button {
+        border: none;
+        border-radius: 5px;
+        background-color: rgba(128, 0, 128, 0.514);
+        font-weight: 700;
+      }
+    }
+  }
+
+  button:hover {
+    cursor: pointer;
+    color: purple;
+    border-color: purple;
+  }
+
+  .ModalContainer {
+    display: flex;
+    flex-direction: column;
+  }
 }
