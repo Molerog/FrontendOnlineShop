@@ -85,10 +85,11 @@
     cursor: pointer;
     color: purple;
     border-color: purple;
-  }
+  }  
+ 
+}
 
-  .ModalContainer {
-    display: flex;
-    flex-direction: column;
-  }
+.ModalContainer {
+  display:flex;
+  flex-direction: column;
 }

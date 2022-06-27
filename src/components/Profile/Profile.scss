@@ -5,31 +5,6 @@
   min-height: 130em;
   flex-direction: column;
 
-  .ProfileContainer {
-    display: flex;
-    justify-content: center;
-    width: 40%;
-    margin: auto;
-    padding: 2em;
-    margin-top: 1em;
-    border-style: dotted;
-
-    .AvatarContainer {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex: 20%;
-    }
-
-    .DataContainer {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      flex: 80%;
-      padding: 1em;
-    }
-  }
-
   .OrdersContainer {
     padding: 2em;
 
