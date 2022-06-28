@@ -92,6 +92,8 @@ const Cart = () => {
         <div className="MainContainer">
           <div className="ProductsContainer">{cartItem}</div>
           <div className="GlobalInfoContainer">
+          <hr></hr>
+          <br></br>
             <div className="InfoContainer">
               <span className="QuantityContainer">
                 Cantidad total: {cart.length}
@@ -103,10 +105,13 @@ const Cart = () => {
                   .reduce((prev, next) => prev + next)}{" "}
                 €
               </span>
+              
               <button className="ClearContainer" onClick={() => clearCart()}>
                 Vacíar
               </button>
+             
             </div>
+             
           </div>
         </div>
 

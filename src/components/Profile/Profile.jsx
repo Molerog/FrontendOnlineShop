@@ -33,7 +33,7 @@ $(".info dd").each(function () {
         </div>
       </div>
     );
-  });
+  }).reverse();
 
   if (orderList.length === 0) {
     return (
@@ -64,7 +64,7 @@ $(".info dd").each(function () {
               <dd>86</dd>
               <dt>Alternative</dt>
               <dd>28</dd>
-              <dt>Techno</dt>
+              <dt>K-pop</dt>
               <dd>32</dd>
             </dl>
 
@@ -141,7 +141,7 @@ $(".info dd").each(function () {
             <dd>86</dd>
             <dt>Alternative</dt>
             <dd>28</dd>
-            <dt>Techno</dt>
+            <dt>K-pop</dt>
             <dd>32</dd>
           </dl>
 
