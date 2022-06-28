@@ -8,9 +8,10 @@ import { Badge } from 'antd';
 import { ProductContext } from "../../context/ProductState";
 
 const Header = () => {
-  const { cart } = useContext(ProductContext);
+  const { cart, clearCart } = useContext(ProductContext);
   const { token, logout } = useContext(UserContext);
   const logoutUser = () => {
+    clearCart()
     logout();
   };
 
