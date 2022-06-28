@@ -216,8 +216,11 @@ https://es.reactjs.org/docs/getting-started.html
 
 ## Agradecimientos:
 
-Com siempre, a los profes ([Sofía](https://github.com/SofiaPinilla), [Geer](https://github.com/GeerDev) e [Iván](https://github.com/ivanpuebla10)).
-Y a los compis, en especial a [Yorch](https://github.com/Yorch82) y [Vincent](https://github.com/Vincecoorp21) por ayudarnos con el Backend en general, a [David](https://github.com/Dubesor22) por enseñarnos a sumar y a [Mike](https://github.com/MrSetOne) por ayudarnos con el Frontend.
+Como siempre, a los profes ([Sofía](https://github.com/SofiaPinilla), [Geer](https://github.com/GeerDev) e [Iván](https://github.com/ivanpuebla10)).
+
+A los compis, en especial a [Yorch](https://github.com/Yorch82) y [Vincent](https://github.com/Vincecoorp21) por ayudarnos con el Backend en general, a [David](https://github.com/Dubesor22) por enseñarnos a sumar y a [Mike](https://github.com/MrSetOne) por ayudarnos con el Frontend.
+
+Y, por último a [Miguel](https://github.com/Mik3Tab) por ayudarnos a resolver unos bugs.
 
 ## Autores:
 
