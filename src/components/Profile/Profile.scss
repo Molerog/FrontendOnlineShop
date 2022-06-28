@@ -2,13 +2,37 @@
   display: flex;
   justify-content: flex-end;
   // flex-wrap: wrap;
-  min-height: 130em;
   flex-direction: column;
+
+  .ProfileContainer {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    margin: auto;
+    padding: 2em;
+    margin-top: 1em;
+    border-style: dotted;
+
+    .AvatarContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 20%;
+    }
+
+    .DataContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 80%;
+      padding: 1em;
+    }
+  }
 
   .OrdersContainer {
     padding: 2em;
-    margin-top: 30em;
-    
+    margin-top: 40em;
+    // position:absolute;
 
     .TicketsContainer {
       display: flex;
@@ -58,7 +82,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .card {
   position: absolute;
-  top: 30%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
 
@@ -204,3 +228,4 @@ h1, h2, h3, h4, h5, h6, p {
     }
   }
 }
+
