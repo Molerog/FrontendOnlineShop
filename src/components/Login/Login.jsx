@@ -16,7 +16,6 @@ const Login = () => {
     useEffect(() => {       
           const foundToken = JSON.parse(localStorage.getItem("token"));
           if (foundToken) {
-            console.log(foundToken)
           navigate("/home")
         }    
     }, [login])

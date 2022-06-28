@@ -28,7 +28,6 @@ const Product = () => {
   };
 
   const productlist = products.map((product) => {
-    console.log(product);
     return (
       <div key={product.id}>
         <Card

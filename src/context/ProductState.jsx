@@ -20,7 +20,6 @@ export const ProductProvider = ({ children }) => {
 
     const getProducts = async () => {
         const res = await axios.get(API_URL + "/products/productcategorysection");
-        console.log(res.data.productSectionCategory)
         dispatch({
             type: "GET_PRODUCTS",
             payload: res.data.productSectionCategory
@@ -35,7 +34,6 @@ export const ProductProvider = ({ children }) => {
     };
 
     const clearCart = () => {
-        console.log(initialState)
         dispatch({
             type: "CLEAR_CART",
         });
