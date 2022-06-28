@@ -7,6 +7,7 @@
 
   .OrdersContainer {
     padding: 2em;
+    margin-top: 30em;
 
     .TicketsContainer {
       display: flex;
@@ -56,7 +57,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .card {
   position: absolute;
-  top: 40%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
 

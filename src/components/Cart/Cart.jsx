@@ -10,17 +10,20 @@ const Cart = () => {
   // const products = JSON.parse(localStorage.getItem("cart"));
 
   const { cart, clearCart, deleteOne } = useContext(ProductContext);
-  const initialCart = cart.map((e) => {
-    return <span>{e.product}</span>;
-  });
+  // const initialCart = cart.map((e) => {
+  //   return <span>{e.product}</span>;
+  // });
   const { createOrder } = useContext(OrderContext);
   const [visible, setVisible] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
-  const [modalText, setModalText] = useState(initialCart);
+  const [modalText, setModalText] = useState("");
 
   const navigate = useNavigate();
 
-  const showModal = () => {
+  const showModal = async () => {
+    setModalText(cart.map((e) => {
+      return <span>{e.product}</span>;
+    }))
     setVisible(true);
   };
 
@@ -31,7 +34,7 @@ const Cart = () => {
     setTimeout(() => {
       setVisible(false);
       setConfirmLoading(false);
-      clearCart(initialCart);
+      clearCart(modalText);
       navigate("/profile");
     }, 2000);
   };

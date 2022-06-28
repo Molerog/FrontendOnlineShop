@@ -6,21 +6,20 @@
     flex-direction: row;
     align-items: flex-end;
     padding: 5em;
-    width: 70%;
+    flex-basis:70%;
 
     .MainContainer {
-      flex: 5;
-
+        flex:5;
       .ProductsContainer {
         flex-direction: column;
         padding: 2em;
-        width: 100%;
+        width: 97%;
+      
 
         .ProductContainer {
           display: flex;
           justify-content: space-around;
           align-items: center;
-
           .NameContainer {
             flex: 5;
           }
@@ -85,11 +84,11 @@
     cursor: pointer;
     color: purple;
     border-color: purple;
-  }  
- 
+  }
 }
 
 .ModalContainer {
-  display:flex;
+  display: flex;
   flex-direction: column;
 }
+
