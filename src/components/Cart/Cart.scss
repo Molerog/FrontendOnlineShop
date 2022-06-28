@@ -3,7 +3,7 @@
   justify-content: center;
 
   .CartGeneralContainer {
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-end;
     padding: 5em;
     flex-basis:70%;
@@ -12,9 +12,9 @@
         flex:5;
       .ProductsContainer {
         flex-direction: column;
+        justify-content: center;
         padding: 2em;
-        width: 97%;
-      
+        width: 90%;
 
         .ProductContainer {
           display: flex;
@@ -39,7 +39,7 @@
       .GlobalInfoContainer {
         flex-direction: column;
         padding: 2em;
-        width: 100%;
+        width: 90%;
 
         .InfoContainer {
           display: flex;
@@ -91,4 +91,3 @@
   display: flex;
   flex-direction: column;
 }
-
